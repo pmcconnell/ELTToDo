@@ -8,6 +8,7 @@
 
 #import "ELTToDoTableViewController.h"
 #import "ELTToDoItem.h"
+#import "ELTViewController.h"
 
 @interface ELTToDoTableViewController ()
 @property (strong, nonatomic) NSMutableArray *toDos;
@@ -106,13 +107,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // Navigation logic may go here. Create and push another view controller.
-  /*
-   <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-   // ...
-   // Pass the selected object to the new view controller.
-   [self.navigationController pushViewController:detailViewController animated:YES];
-   */
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  ELTViewController *vc = segue.destinationViewController;
+  if ([segue.identifier isEqualToString:@"toDoDetailSegue"]) {
+    // showing an existing todo
+    int row = [[self.tableView indexPathForSelectedRow]row];
+    vc.toDoItem = [self.toDos objectAtIndex:row];
+  } else if ([segue.identifier isEqualToString:@"toDoAddSegue"]) {
+    // adding a new todo
+    vc.toDoItem = [[ELTToDoItem alloc]init];
+  }
 }
 
 

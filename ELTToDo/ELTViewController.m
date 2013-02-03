@@ -19,7 +19,7 @@
 {
   [super viewDidLoad];
   
-  _toDoItem = [[ELTToDoItem alloc]init];
+//  _toDoItem = [[ELTToDoItem alloc]init];
   
   [self configureView];
   
