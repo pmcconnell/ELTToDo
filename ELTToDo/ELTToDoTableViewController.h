@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ELTViewController.h"
 
-@interface ELTToDoTableViewController : UITableViewController
+@interface ELTToDoTableViewController : UITableViewController <ELTTodDetailDelgate>
 
 @end

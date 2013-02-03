@@ -39,4 +39,11 @@
   self.toDoNotesTextView.text = self.toDoItem.notes;
 }
 
+- (IBAction)saveButtonPressed:(id)sender {
+  if (self.editMode) {
+    [self.delegate toDoWasEdited:self.toDoItem];
+  } else {
+    [self.delegate toDoWasAdded:self.toDoItem];
+  }
+}
 @end

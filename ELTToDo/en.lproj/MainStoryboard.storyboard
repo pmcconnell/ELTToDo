@@ -126,7 +126,13 @@
                             <constraint firstItem="NK2-VQ-QRa" firstAttribute="top" secondItem="cnU-eT-D34" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zsB-JN-6e8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="K4T-Nr-lhN"/>
+                    <navigationItem key="navigationItem" id="K4T-Nr-lhN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YTs-YQ-kHI">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="2" id="qCQ-vx-vVE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="toDoCompletedSwitch" destination="NK2-VQ-QRa" id="I9j-1w-8h6"/>
                         <outlet property="toDoNameTextField" destination="cnU-eT-D34" id="J24-g6-Omt"/>
@@ -138,22 +144,6 @@
             <point key="canvasLocation" x="177" y="86"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ELTToDoTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ELTToDoTableViewController.h"/>
-        </class>
-        <class className="ELTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ELTViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="toDoCompletedSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="toDoNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="toDoNotesTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

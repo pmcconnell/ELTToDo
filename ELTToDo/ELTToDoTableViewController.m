@@ -8,7 +8,7 @@
 
 #import "ELTToDoTableViewController.h"
 #import "ELTToDoItem.h"
-#import "ELTViewController.h"
+
 
 @interface ELTToDoTableViewController ()
 @property (strong, nonatomic) NSMutableArray *toDos;
@@ -112,15 +112,30 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   ELTViewController *vc = segue.destinationViewController;
+  vc.delegate = self;
   if ([segue.identifier isEqualToString:@"toDoDetailSegue"]) {
     // showing an existing todo
     int row = [[self.tableView indexPathForSelectedRow]row];
     vc.toDoItem = [self.toDos objectAtIndex:row];
+    vc.editMode = YES;
+
   } else if ([segue.identifier isEqualToString:@"toDoAddSegue"]) {
     // adding a new todo
     vc.toDoItem = [[ELTToDoItem alloc]init];
+    vc.editMode = NO;
   }
 }
 
+#pragma mark - ELTToDo Delegates
+
+-(void)toDoWasAdded:(ELTToDoItem *)todo
+{
+  NSLog(@"ToDo Added");
+}
+
+-(void)toDoWasEdited:(ELTToDoItem *)todo
+{
+  NSLog(@"ToDo Edited");
+}
 
 @end
