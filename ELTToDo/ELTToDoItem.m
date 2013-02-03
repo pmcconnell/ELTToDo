@@ -10,15 +10,23 @@
 
 @implementation ELTToDoItem
 
-- (id)init
+- (id)initWithTitle:(NSString *)title
+              Notes:(NSString *)notes
 {
-  if (self= [super init]) {
-    _title = @"unnamed";
-    _notes = @"FOO";
+  if (self = [super init]) {
+    _title = title;
+    _notes = notes;
     _completed = NO;
   }
   
   return self;
 }
+
+
+- (id)init
+{
+  return [self initWithTitle:@"unnamed" Notes:@""];
+}
+
 
 @end

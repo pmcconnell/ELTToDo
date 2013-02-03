@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - ToDos-->
+        <!--To Do Table View Controller - ToDos-->
         <scene sceneID="Lkj-3r-nYm">
             <objects>
-                <tableViewController id="3GQ-di-rUO" sceneMemberID="viewController">
+                <tableViewController id="3GQ-di-rUO" customClass="ELTToDoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mUe-ip-bYM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,10 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3GQ-di-rUO" id="HTl-ji-aH7"/>
+                            <outlet property="delegate" destination="3GQ-di-rUO" id="RHC-i5-5S9"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDos" id="TmS-w9-OyF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pDa-CD-Apg">
@@ -135,6 +139,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="ELTToDoTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ELTToDoTableViewController.h"/>
+        </class>
         <class className="ELTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ELTViewController.h"/>
             <relationships>

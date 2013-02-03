@@ -21,12 +21,9 @@
   [super viewDidLoad];
   
   _toDos = [NSMutableArray arrayWithCapacity:0];
-  
-  // Uncomment the following line to preserve selection between presentations.
-  // self.clearsSelectionOnViewWillAppear = NO;
-  
-  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+  [_toDos addObject:[[ELTToDoItem alloc]initWithTitle:@"Wash Car" Notes: @"Its really dirty"]];
+  [_toDos addObject:[[ELTToDoItem alloc]initWithTitle:@"Feed Dog" Notes: @""]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +54,8 @@
   // Configure the cell...
   
   ELTToDoItem *currentToDo = [self.toDos objectAtIndex:indexPath.row];
+  
+  NSLog(@"ToDo: %@", currentToDo);
   
   cell.textLabel.text = currentToDo.title;
   cell.detailTextLabel.text = currentToDo.completed ? @"Completed" : @"Not Completed";
@@ -115,5 +114,6 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
 }
+
 
 @end
