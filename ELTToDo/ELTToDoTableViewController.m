@@ -140,10 +140,13 @@
 -(void)toDoWasEdited:(ELTToDoItem *)todo
 {
   NSLog(@"ToDo Edited");
-  ELTToDoItem *editedToDo = [self.toDos objectAtIndex:self.indexOfCurrentToDo];
-  editedToDo.title = todo.title;
-  editedToDo.notes = todo.notes;
-  editedToDo.completed = todo.completed;
+//  ELTToDoItem *editedToDo = [self.toDos objectAtIndex:self.indexOfCurrentToDo];
+//  editedToDo.title = todo.title;
+//  editedToDo.notes = todo.notes;
+//  editedToDo.completed = todo.completed;
+  
+  [self.toDos replaceObjectAtIndex:self.indexOfCurrentToDo withObject:todo];
+  
   [self.tableView reloadData];
   [self.navigationController popViewControllerAnimated:YES];
 }
