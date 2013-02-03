@@ -40,10 +40,18 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
+  [self updateToDo];
   if (self.editMode) {
     [self.delegate toDoWasEdited:self.toDoItem];
   } else {
     [self.delegate toDoWasAdded:self.toDoItem];
   }
+}
+
+- (void)updateToDo
+{
+  self.toDoItem.title = self.toDoNameTextField.text;
+  self.toDoItem.notes = self.toDoNotesTextView.text;
+  self.toDoItem.completed = self.toDoCompletedSwitch.on;
 }
 @end

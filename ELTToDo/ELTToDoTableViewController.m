@@ -12,6 +12,7 @@
 
 @interface ELTToDoTableViewController ()
 @property (strong, nonatomic) NSMutableArray *toDos;
+@property (nonatomic) int indexOfCurrentToDo;
 @end
 
 @implementation ELTToDoTableViewController
@@ -113,12 +114,12 @@
 {
   ELTViewController *vc = segue.destinationViewController;
   vc.delegate = self;
+  self.indexOfCurrentToDo = [[self.tableView indexPathForSelectedRow]row];
+  
   if ([segue.identifier isEqualToString:@"toDoDetailSegue"]) {
     // showing an existing todo
-    int row = [[self.tableView indexPathForSelectedRow]row];
-    vc.toDoItem = [self.toDos objectAtIndex:row];
+    vc.toDoItem = [self.toDos objectAtIndex:self.indexOfCurrentToDo];
     vc.editMode = YES;
-
   } else if ([segue.identifier isEqualToString:@"toDoAddSegue"]) {
     // adding a new todo
     vc.toDoItem = [[ELTToDoItem alloc]init];
@@ -131,11 +132,20 @@
 -(void)toDoWasAdded:(ELTToDoItem *)todo
 {
   NSLog(@"ToDo Added");
+  [self.toDos addObject:todo];
+  [self.tableView reloadData];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)toDoWasEdited:(ELTToDoItem *)todo
 {
   NSLog(@"ToDo Edited");
+  ELTToDoItem *editedToDo = [self.toDos objectAtIndex:self.indexOfCurrentToDo];
+  editedToDo.title = todo.title;
+  editedToDo.notes = todo.notes;
+  editedToDo.completed = todo.completed;
+  [self.tableView reloadData];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
