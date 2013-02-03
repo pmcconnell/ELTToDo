@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ELTViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *toDoNameTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *toDoCompletedSwitch;
+@property (weak, nonatomic) IBOutlet UITextView *toDoNotesTextView;
 
 @end
