@@ -10,4 +10,15 @@
 
 @implementation ELTToDoItem
 
+- (id)init
+{
+  if (self= [super init]) {
+    _title = @"unnamed";
+    _notes = @"FOO";
+    _completed = NO;
+  }
+  
+  return self;
+}
+
 @end

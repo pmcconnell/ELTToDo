@@ -8,6 +8,7 @@
 
 #import "ELTViewController.h"
 
+
 @interface ELTViewController ()
 
 @end
@@ -16,14 +17,26 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+  [super viewDidLoad];
+  
+  _toDoItem = [[ELTToDoItem alloc]init];
+  
+  [self configureView];
+  
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
+}
+
+
+- (void)configureView
+{
+  self.toDoNameTextField.text = self.toDoItem.title;
+  self.toDoCompletedSwitch.on = self.toDoItem.completed;
+  self.toDoNotesTextView.text = self.toDoItem.notes;
 }
 
 @end
