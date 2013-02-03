@@ -18,6 +18,7 @@
 		13FE08B016BEC11A00F6F1B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13FE08AF16BEC11A00F6F1B2 /* Default-568h@2x.png */; };
 		13FE08B316BEC11A00F6F1B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FE08B116BEC11A00F6F1B2 /* MainStoryboard.storyboard */; };
 		13FE08B616BEC11A00F6F1B2 /* ELTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FE08B516BEC11A00F6F1B2 /* ELTViewController.m */; };
+		13FE08BE16BEC4C200F6F1B2 /* ELTToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FE08BD16BEC4C200F6F1B2 /* ELTToDoItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		13FE08B216BEC11A00F6F1B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		13FE08B416BEC11A00F6F1B2 /* ELTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELTViewController.h; sourceTree = "<group>"; };
 		13FE08B516BEC11A00F6F1B2 /* ELTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELTViewController.m; sourceTree = "<group>"; };
+		13FE08BC16BEC4C200F6F1B2 /* ELTToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELTToDoItem.h; sourceTree = "<group>"; };
+		13FE08BD16BEC4C200F6F1B2 /* ELTToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELTToDoItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				13FE08A916BEC11A00F6F1B2 /* ELTAppDelegate.m */,
 				13FE08B416BEC11A00F6F1B2 /* ELTViewController.h */,
 				13FE08B516BEC11A00F6F1B2 /* ELTViewController.m */,
+				13FE08BC16BEC4C200F6F1B2 /* ELTToDoItem.h */,
+				13FE08BD16BEC4C200F6F1B2 /* ELTToDoItem.m */,
 				13FE08B116BEC11A00F6F1B2 /* MainStoryboard.storyboard */,
 				13FE08A016BEC11900F6F1B2 /* Supporting Files */,
 			);
@@ -177,6 +182,7 @@
 				13FE08A616BEC11900F6F1B2 /* main.m in Sources */,
 				13FE08AA16BEC11A00F6F1B2 /* ELTAppDelegate.m in Sources */,
 				13FE08B616BEC11A00F6F1B2 /* ELTViewController.m in Sources */,
+				13FE08BE16BEC4C200F6F1B2 /* ELTToDoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
