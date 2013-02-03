@@ -85,9 +85,9 @@
 			children = (
 				13FE08A816BEC11A00F6F1B2 /* ELTAppDelegate.h */,
 				13FE08A916BEC11A00F6F1B2 /* ELTAppDelegate.m */,
-				13FE08B116BEC11A00F6F1B2 /* MainStoryboard.storyboard */,
 				13FE08B416BEC11A00F6F1B2 /* ELTViewController.h */,
 				13FE08B516BEC11A00F6F1B2 /* ELTViewController.m */,
+				13FE08B116BEC11A00F6F1B2 /* MainStoryboard.storyboard */,
 				13FE08A016BEC11900F6F1B2 /* Supporting Files */,
 			);
 			path = ELTToDo;
