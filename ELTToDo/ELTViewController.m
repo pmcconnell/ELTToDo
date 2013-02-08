@@ -54,4 +54,11 @@
   self.toDoItem.notes = self.toDoNotesTextView.text;
   self.toDoItem.completed = self.toDoCompletedSwitch.on;
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:@"saveToDoSegue"]) {
+    [self updateToDo];
+  }
+}
 @end

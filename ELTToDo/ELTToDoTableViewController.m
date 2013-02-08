@@ -151,4 +151,16 @@
   [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)saveToDo:(UIStoryboardSegue *)segue
+{
+  NSLog(@"Save ToDo");
+  ELTViewController *vc = (ELTViewController *)segue.sourceViewController;
+  if (vc.editMode == YES ) {
+    [self.toDos replaceObjectAtIndex:self.indexOfCurrentToDo withObject:vc.toDoItem];
+  } else {
+    [self.toDos addObject:vc.toDoItem];
+  }
+  [self.tableView reloadData];
+}
+
 @end

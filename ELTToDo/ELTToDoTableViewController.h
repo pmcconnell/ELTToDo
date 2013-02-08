@@ -11,4 +11,6 @@
 
 @interface ELTToDoTableViewController : UITableViewController <ELTTodDetailDelgate>
 
+- (IBAction)saveToDo:(UIStoryboardSegue *)segue;
+
 @end
